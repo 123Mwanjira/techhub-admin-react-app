@@ -1,49 +1,23 @@
-React Product Admin Dashboard
- Overview
+TechHub Admin React App
 
-This project is a React-based Single Page Application (SPA) built as an admin dashboard for managing products in an e-commerce system. It demonstrates modern frontend development practices including component-based architecture, state management, routing, API integration, and testing.
+A modern React-based Admin Dashboard for managing products in an e-commerce system. This project demonstrates advanced React concepts including state management, CRUD operations, routing, context API, and testing.
 
-The application allows an administrator to:
-
-View products
-Add new products
-Edit existing products
-Delete products
-Search products dynamically
-
-It uses a simulated backend powered by JSON Server.
-
- Features
- Core Features (CRUD)
-Create new products (POST)
-Read/display products (GET)
-Update products (PATCH)
-Delete products (DELETE)
- Search Functionality
-Live filtering of products by name
- Routing (React Router)
-Home page
-Products page
-Add Product page
-Edit Product page
-404 Not Found page
- State Management
-Context API for global product state
-Custom hook (useProducts) for clean access to context
-🔌 Backend Simulation
-JSON Server used as fake REST API
-Persistent data stored in db.json
- Testing
-Vitest configured
-React Testing Library used
-Component testing (ProductCard, ProductForm)
-Interaction testing (form input handling)
+Live Features
+Home page describing the application
+Products page displaying all products
+Add Product form (POST to backend)
+Edit Product (PATCH updates)
+Delete Product
+Live search functionality
+Client-side routing (React Router)
+Global state management using Context API
+ Unit testing with Vitest & React Testing Library
  Tech Stack
 React (Vite)
 React Router DOM
 Axios
 Context API
-JSON Server
+JSON Server (mock backend)
 Vitest
 React Testing Library
  Project Structure
@@ -51,9 +25,10 @@ src/
 │
 ├── components/
 │   ├── Navbar.jsx
+│   ├── Footer.jsx
 │   ├── ProductCard.jsx
-│   ├── ProductForm.jsx
 │   ├── ProductList.jsx
+│   ├── ProductForm.jsx
 │   ├── SearchBar.jsx
 │
 ├── pages/
@@ -66,72 +41,91 @@ src/
 ├── context/
 │   ├── ProductContext.jsx
 │
-├── hooks/
-│   ├── useProducts.js
-│
-├── services/
-│   ├── api.js
-│
-├── setupTests.js
-└── main.jsx
+├── App.jsx
+├── main.jsx
  Installation & Setup
-1. Clone repository
-git clone https://github.com/your-username/react-product-admin-dashboard.git
-cd react-product-admin-dashboard
+1. Clone the repository
+git clone https://github.com/123Mwanjira/techhub-admin-react-app.git
+cd techhub-admin-react-app
 2. Install dependencies
 npm install
-3. Start JSON Server (Backend)
+3. Start development server
+npm run dev
+4. Start JSON Server (backend)
+
+Make sure db.json exists in root:
+
 npm run server
 
 Backend runs at:
 
 http://localhost:3001/products
-4. Start frontend
-npm run dev
-
-Frontend runs at:
-
-http://localhost:5173
 5. Run tests
 npm run test
- API Endpoints
-Method	Endpoint	Description
-GET	/products	Fetch all products
-POST	/products	Add new product
-PATCH	/products/:id	Update product
-DELETE	/products/:id	Delete product
- Key Concepts Demonstrated
-React functional components
-Hooks (useState, useEffect, useContext)
-Custom hooks
-Context API global state
-React Router navigation
-Controlled forms
-API integration with Axios
-CRUD operations
-Component reusability
-Basic unit testing
- Testing Strategy
-Unit tests for UI components
-Form input interaction tests
-Context-based rendering tests
-Vitest used as test runner
-React Testing Library for DOM assertions
- Known Issues
-Tests may require stable environment setup in WSL/Linux
-JSON Server must run separately before using app features
+ Sample Backend Data (db.json)
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 1200
+    },
+    {
+      "id": 2,
+      "name": "Phone",
+      "price": 800
+    }
+  ]
+}
+ Key Features Explained
+ CRUD Operations
+GET products from JSON server
+POST new products via form
+PATCH updates for editing products
+DELETE product entries
+ Routing
+
+Implemented using React Router:
+
+/ → Home
+/products → Products list
+/add-product → Add form
+/edit/:id → Edit form
+ → 404 page
+ State Management
+
+Global state handled using Context API:
+
+Centralized product state
+Shared across components
+Avoids prop drilling
+ Search Functionality
+Live filtering of products
+Updates results as user types
+ Testing
+Built with Vitest
+React Testing Library used
+Example test: ProductCard renders correctly
  Future Improvements
-Add authentication system
-Improve UI/UX design
-Add pagination
-Add product categories
-Deploy to Netlify/Vercel
-Improve test coverage
+Authentication (login system)
+Product categories
+Pagination
+Advanced filtering
+Deployment (Netlify/Vercel)
+More unit & integration tests
  Author
- Maurine Wanjira
 
-Built as part of a React Summative Assessment Project demonstrating frontend development skills including state management, routing, API handling, and testing.
+Maureen Wanjira
 
-🏁 Conclusion
+ License
 
-This project demonstrates a complete React workflow from UI design to state management, backend simulation, and testing — simulating a real-world admin dashboard application.
+This project is for educational purposes.
+
+ Status
+
+✔ Fully functional SPA
+✔ CRUD operations working
+✔ Routing implemented
+✔ Context API used
+✔ Testing configured
+✔ Git workflow completed
