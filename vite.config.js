@@ -7,12 +7,7 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: "./src/setupTests.js",
-    pool: "forks",
-    poolOptions: {
-      forks: {
-        singleFork: true
-      }
-    },
-    isolate: false
+    include: ["src/**/*.{test,spec}.{js,jsx,ts,tsx}"],
+    pool: "vmThreads"
   }
 });
