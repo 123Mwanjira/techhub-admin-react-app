@@ -1,18 +1,22 @@
-import { useProducts } from "../hooks/useProducts";
+import { useState } from "react";
 
-function SearchBar() {
-  const { search, setSearch } = useProducts();
+export default function SearchBar({ onSearch }) {
+  const [term, setTerm] = useState("");
+
+  function handleChange(e) {
+    const value = e.target.value;
+    setTerm(value);
+    onSearch(value);
+  }
 
   return (
-    <div style={{ margin: "10px" }}>
+    <div>
       <input
         type="text"
-        placeholder="Search products..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search products by name..."
+        value={term}
+        onChange={handleChange}
       />
     </div>
   );
 }
-
-export default SearchBar;
