@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useId } from "react";
 import { useProducts } from "../hooks/useProducts";
 
 function ProductForm() {
@@ -6,6 +6,10 @@ function ProductForm() {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+
+  // useId hook
+  const nameId = useId();
+  const priceId = useId();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,18 +28,26 @@ function ProductForm() {
       <h2>Add Product</h2>
 
       <form onSubmit={handleSubmit}>
-        <input
-          value={name}
-          placeholder="Name"
-          onChange={(e) => setName(e.target.value)}
-        />
+        <div>
+          <label htmlFor={nameId}>Product Name</label>
+          <input
+            id={nameId}
+            value={name}
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
 
-        <input
-          value={price}
-          placeholder="Price"
-          type="number"
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        <div>
+          <label htmlFor={priceId}>Product Price</label>
+          <input
+            id={priceId}
+            value={price}
+            placeholder="Price"
+            type="number"
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </div>
 
         <button type="submit">Add</button>
       </form>
