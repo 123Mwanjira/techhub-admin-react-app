@@ -3,17 +3,17 @@ TechHub Admin React App
 A modern React-based Admin Dashboard for managing products in an e-commerce system.
 This project demonstrates advanced React concepts including state management, CRUD operations, routing, Context API, and unit testing.
 
-🌐 Live Features
-🏠 Home page introducing the application
-📦 Products page displaying all products
-➕ Add Product (POST to backend)
-✏️ Edit Product (PATCH updates)
-❌ Delete Product
-🔍 Live search functionality
-🧭 Client-side routing using React Router
-🌍 Global state management using Context API
-🧪 Unit testing using Vitest & React Testing Library
-🛠 Tech Stack
+Live Features
+Home page introducing the application
+Products page displaying all products
+Add Product (POST to backend)
+Edit Product (PATCH updates)
+Delete Product
+Live search functionality
+Client-side routing using React Router
+Global state management using Context API
+ Unit testing using Vitest & React Testing Library
+ Tech Stack
 React (Vite)
 React Router DOM
 Axios
@@ -21,7 +21,7 @@ Context API
 JSON Server (mock backend)
 Vitest
 React Testing Library
-📁 Project Structure
+ Project Structure
 src/
 │
 ├── components/
@@ -66,7 +66,7 @@ Backend runs at:
 http://localhost:3001/products
 5. Run tests
 npm run test
-🧪 Testing
+ Testing
 Built using Vitest
 Uses React Testing Library
 Covers:
@@ -93,7 +93,7 @@ Routing components
     }
   ]
 }
-🔑 Key Features Explained
+Key Features Explained
 CRUD Operations
 GET → fetch products
 POST → add new product
@@ -115,30 +115,30 @@ Global state is handled using Context API:
 Centralized product state
 Shared across components
 Eliminates prop drilling
-🔍 Search Functionality
+ Search Functionality
 Live filtering of products
 Updates results as user types
 Integrated with state management
-🧪 Testing Summary
+ Testing Summary
 Vitest configured
 React Testing Library used
 6 passing test suites
 Covers components + routing + context usage
-🚀 Future Improvements
+ Future Improvements
 Authentication system (login/register)
 Product categories & filtering
 Pagination for product list
 Deployment (Netlify / Vercel)
 Expanded test coverage (integration tests)
-👩‍💻 Author
+ Author
 
 Maureen Wanjira
 
-📜 License
+ License
 
 This project is for educational purposes only.
 
-✅ Project Status
+Project Status
 
 ✔ Fully functional SPA
 ✔ Complete CRUD operations
@@ -147,7 +147,7 @@ This project is for educational purposes only.
 ✔ Testing fully working (6/6 passing)
 ✔ Git workflow completed
 
-🎯 Final Note
+ Final Note
 
 This version is now submission-ready and rubric-aligned, especially for:
 
